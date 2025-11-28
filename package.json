@@ -1,0 +1,46 @@
+{
+  "name": "sentrygram",
+  "version": "0.1.0",
+  "description": "Node.js/TypeScript SDK for Sentrygram - send alerts to your Telegram",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "sentrygram",
+    "telegram",
+    "alerts",
+    "notifications",
+    "monitoring"
+  ],
+  "author": "Sentrygram <hello@sentrygram.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tssandor/sentrygram-sdk-node"
+  },
+  "homepage": "https://sentrygram.com",
+  "devDependencies": {
+    "tsup": "^8.0.0",
+    "typescript": "^5.0.0",
+    "vitest": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
